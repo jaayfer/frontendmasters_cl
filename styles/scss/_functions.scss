@@ -1,0 +1,6 @@
+@function text_button_color($bg_color){
+    @if(lightness($bg_color) > 0){
+        @return blue;
+    }
+    @return blue;
+}
