@@ -1,6 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .header {
   width: 100%;
-  height: 70px;
+  height: 60px;
   background-color: #330600;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -50,6 +55,11 @@
   background-image: linear-gradient(to right, #b33c00 0%, #cc4400 100%);
 }
 
+main {
+  width: 100%;
+  height: 100%;
+}
+
 .home {
   color: lightgray;
   display: -webkit-box;
@@ -76,6 +86,11 @@
 
 .home__content h1 {
   font-size: 3em;
+  margin: 1rem;
+}
+
+.home__content h2 {
+  margin: .7rem;
 }
 
 .home__buttons {
@@ -84,6 +99,8 @@
 
 .home__buttons span {
   border-radius: 30px;
+  color: white;
+  font-weight: bold;
   padding: 20px;
   opacity: 0.8;
   margin-right: 10px;
@@ -100,11 +117,6 @@
 
 .home__buttons--right {
   background-color: #b37f00;
-}
-
-.home__buttons a {
-  color: white;
-  font-weight: bold;
 }
 
 .languages {
@@ -166,11 +178,24 @@
   background-size: cover;
 }
 
+.join_now {
+  width: 100%;
+  height: 50vh;
+  background: url("/images/join_now.jpg");
+  background-size: cover;
+}
+
+.social-icons {
+  width: 100%;
+  height: 40vh;
+  background: whitesmoke;
+}
+
 body {
-  margin: 0;
   background-color: #000;
-  font-size: 16px;
   font-family: 'Roboto', sans-serif;
+  line-height: 1;
+  overflow-x: hidden;
 }
 
 body a {
@@ -179,15 +204,17 @@ body a {
 }
 
 body h1, body h2 {
-  margin: 10px;
+  font-weight: 700;
 }
 
 #video {
   position: absolute;
-  top: 0%;
-  left: 0%;
+  top: 50%;
+  left: 50%;
   min-width: 100%;
-  background-size: 100%;
+  background-size: cover;
   z-index: -1;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 /*# sourceMappingURL=main.css.map */

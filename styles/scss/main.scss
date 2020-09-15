@@ -1,30 +1,33 @@
-
+@import "config";
 @import "header";
 @import "main";
 
-body{
-    margin : 0;    
-    background-color: #000;
-    font-size: 16px;
+body{      
+    background-color: #000;    
     font-family: 'Roboto', sans-serif;
+    line-height : 1;
+    overflow-x: hidden;
+
     a{
         text-decoration: none;
         color: lightgray;
     }
 
     h1,h2{
-        margin: 10px;
+        font-weight: 700;
     }
     
 }
 
 #video{
     position: absolute;
-    top:0%;
-    left: 0%;
+    top:50%;
+    left: 50%;
     min-width: 100%;
-    background-size: 100%;        
+    background-size: cover;        
     z-index: -1;
+    transform: translate(-50%,-50%);
+
 
 }
 
