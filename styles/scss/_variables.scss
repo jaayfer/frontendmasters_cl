@@ -1,0 +1,9 @@
+$colors : (
+    primary : #FFB500,
+    bgred : #FF2000,
+);
+
+$primary : map-get($map: $colors, $key: primary);
+$red : map-get($map: $colors, $key: bgred);
+
+

@@ -1,0 +1,33 @@
+
+@import "header";
+@import "main";
+
+body{
+    margin : 0;    
+    background-color: #000;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    a{
+        text-decoration: none;
+        color: lightgray;
+    }
+
+    h1,h2{
+        margin: 10px;
+    }
+    
+}
+
+#video{
+    position: absolute;
+    top:0%;
+    left: 0%;
+    min-width: 100%;
+    background-size: 100%;        
+    z-index: -1;
+
+}
+
+
+
+
