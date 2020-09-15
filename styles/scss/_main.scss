@@ -3,10 +3,7 @@
 @import 'mixins';
 @import 'functions';
 
-main{
-    width: 100%;
-    height: 100%;
-}
+
 
 .home{
     color: lightgray;
@@ -18,8 +15,7 @@ main{
 
     background: $dotted_image_url, repeat;
 
-    &__content{
-        line-height: 1;
+    &__content{        
         text-align: center;        
 
         & h1{
