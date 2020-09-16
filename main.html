@@ -8,7 +8,7 @@
 </head>
 <body>
    
-    <header class="header">
+    <header class="header container">
         <div class="header__logo">
             <img src="/images/logo.svg" alt="Logo"> 
         </div>
@@ -20,25 +20,28 @@
             <a href="#!" class="nav__links">Join Now </a>
             <span class="menu-btn"></span>
         </nav>
+        <div class="nav-btn">
+            <span class="nav-btn__hamburger"></span>
+        </div>
     </header>
 
     <main>
         <video id="video" autoplay muted loop>
             <source src="https://static.frontendmasters.com/assets/fm/med/home/hero.mp4">
         </video>
-        <section class="home">
-            <div class="home__content">
+        <section class="home container">
+            <div class="home__content tx_container">
                 <h1>Advance Your Skills</h1>
-                <h2>with In-Depth, Modern </h2>            
-                <h2>Front-End Engineering Courses</h2>    
+                <p>with In-Depth, Modern <br> Front-End Engineering Courses </p>            
+                  
             </div>
             <div class="home__buttons">
-                <span class="home__buttons--left"><a href="#!">Browse Our Courses</a></span>
-                <span class="home__buttons--right"><a href="#!">View Learning Paths</a></span>
+                <span class="home__buttons--left button"><a href="#!">Browse Our Courses</a></span>
+                <span class="home__buttons--right button"><a href="#!">View Learning Paths</a></span>
             </div>
         </section>
 
-        <section class="languages">
+        <section class="languages container">
             <a class="languages__javascript">Javascript</a>
             <a class="languages__node">node</a>
             <a class="languages__css">css</a>
@@ -46,14 +49,14 @@
             <a class="languages__angular">Angular</a>
         </section>
 
-        <section class="join_now">
-            <div class="join_now__content">
-                <h1>Join Now and Learn</h1>
-                <h1>Straight from the Experts Who Shape the Modern Web</h1>
+        <section class="join_now container">
+            <div class="join_now__content tx_container">
+                <p> Join Now and Learn Straight <br>
+                from the Experts Who Shape<br> the Modern Web</p>
                 
             </div>
-            <div class="join_now__button">            
-                <a href="#join" >Join Now</a>
+            <div class="join_now__button button">            
+                <span class="button"> <a href="#join" >Join Now</a> </span>
             </div>
             
         </section>

@@ -1,9 +1,8 @@
-$colors : (
-    primary : #FFB500,
-    bgred : #FF2000,
-);
+$fm_red : #FF0500;
+$fm_orange : #FF2F00;
+$fm_yello: #FFB300;
+$fm_black : #202020;
 
-$primary : map-get($map: $colors, $key: primary);
-$red : map-get($map: $colors, $key: bgred);
+$bold : 700;
 
 

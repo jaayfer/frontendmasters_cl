@@ -7,49 +7,28 @@
 
 .header {
   width: 100%;
-  height: 60px;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.9)), to(rgba(0, 0, 0, 0.6))), #cc1a00;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)), #cc1a00;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  position: relative;
+  height: 7%;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.9)), to(rgba(0, 0, 0, 0.6))), #FF0500;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)), #FF0500;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
 }
 
-.header__logo {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 42%;
-          flex: 1 1 42%;
+.header.container {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .header__logo img {
   width: 100%;
   height: 40px;
-}
-
-.header__nav {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 58%;
-          flex: 1 0 58%;
-  text-align: center;
-  visibility: hidden;
-}
-
-.header__nav a {
-  padding: 15px;
-}
-
-@media screen and (min-width: 760px) {
-  .header__nav {
-    visibility: visible;
-  }
 }
 
 .header::after {
@@ -65,8 +44,7 @@
   background-image: linear-gradient(to right, #b33c00 0%, #cc4400 100%);
 }
 
-.home {
-  color: lightgray;
+.container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -80,62 +58,85 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 50vh;
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGklEQVQYV2NkQAOMUH4DAwMDCDPABODqMAQAKe4BBZTlhh0AAAAASUVORK5CYII="), repeat;
 }
 
-.home__content {
+.tx_container {
   text-align: center;
-}
-
-.home__content h1 {
-  font-size: 3em;
-  margin: 1rem;
-}
-
-.home__content h2 {
-  margin: .7rem;
-}
-
-.home__buttons {
-  margin-top: 3em;
-}
-
-.home__buttons span {
-  border-radius: 30px;
   color: white;
-  font-weight: bold;
-  padding: 20px;
-  opacity: 0.8;
-  margin-right: 10px;
 }
 
-.home__buttons span:hover {
+.tx_container h1 {
+  font-size: 2em;
+}
+
+.tx_container p {
+  line-height: 1.5;
+  font-weight: 450;
+  font-size: 1.5em;
+}
+
+.button {
+  border-radius: 2em;
+  color: white;
+  font-size: 1em;
+  padding: .9em 1.5em;
+  opacity: 0.9;
+}
+
+.button:hover {
   opacity: 1;
   cursor: pointer;
 }
 
+.home {
+  width: 100%;
+  font-size: 1.3rem;
+  height: 96%;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGklEQVQYV2NkQAOMUH4DAwMDCDPABODqMAQAKe4BBZTlhh0AAAAASUVORK5CYII="), url("https://static.frontendmasters.com/assets/fm/js/bg1.8d7f86e8bd.jpg") center/cover;
+}
+
+.home__content {
+  margin: 1.5em auto;
+}
+
+.home__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .home__buttons--left {
-  background-color: #991300;
+  background-color: #cc2600;
+  margin-bottom: 10px;
 }
 
 .home__buttons--right {
-  background-color: #b37f00;
+  background-color: #cc8f00;
+}
+
+@media screen and (min-width: 760px) {
+  .home {
+    height: 60%;
+  }
+  .home__buttons {
+    display: block;
+  }
 }
 
 .languages {
   background: #222 linear-gradient(135deg, transparent, rgba(0, 0, 0, 0.7));
-  height: 15vh;
+  height: 10%;
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  font-size: 1rem;
 }
 
 .languages::before {
@@ -144,18 +145,18 @@
           clip-path: polygon(0 70%, 0 100%, 100% 100%, 100% 0);
   background: -webkit-gradient(linear, left top, right top, from(#222), to(#222));
   background: linear-gradient(to right, #222, #222);
-  height: 41px;
+  height: 1.2em;
   width: 100%;
   color: white;
   display: block;
   position: absolute;
   right: 0;
-  top: -40px;
+  top: -1.2em;
 }
 
 .languages a {
-  height: 70px;
-  width: 70px;
+  height: 2em;
+  width: 2em;
   display: block;
   color: transparent;
   margin: 10px;
@@ -193,17 +194,12 @@
 
 .join_now {
   width: 100%;
-  height: 30vh;
+  height: 35vh;
   background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGklEQVQYV2NkQAOMUH4DAwMDCDPABODqMAQAKe4BBZTlhh0AAAAASUVORK5CYII="), radial-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url("/images/join_now.jpg") center no-repeat;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  font-size: 1rem;
+}
+
+.join_now.container {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -211,18 +207,11 @@
 }
 
 .join_now__content {
-  text-align: center;
-  font-size: 1.5em;
-  line-height: 1.5;
-  padding: 30px;
+  margin: 2em auto;
 }
 
 .join_now__button {
-  color: blue;
-  background-color: #db8e00;
-  border-radius: 50px;
-  padding: 20px 100px;
-  font-size: 1.7em;
+  background-color: #cc8400;
 }
 
 .social-icons {
@@ -231,9 +220,19 @@
   background: whitesmoke;
 }
 
+html {
+  font-size: 13px;
+}
+
+@media screen and (min-width: 760px) {
+  html {
+    font-size: 20px;
+  }
+}
+
 body {
   background-color: #000;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;
   line-height: 1;
   overflow-x: hidden;
   height: 100vh;
@@ -263,5 +262,12 @@ main {
   z-index: -1;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  visibility: hidden;
+}
+
+@media screen and (min-width: 760px) {
+  #video {
+    visibility: visible;
+  }
 }
 /*# sourceMappingURL=main.css.map */
