@@ -1,22 +1,7 @@
-@import 'variables';
-@import 'constants';
-@import 'mixins';
-@import 'functions';
-@import 'shared';
-
-
-
-
-
-
 .home{    
     width: 100%;
     font-size: 1.3rem;
-    height: 96%;
-
-    &.container{
-        
-    }
+    height: 96%;    
 
     background: $dotted_image_url, $bg_sm_image center/cover ;
     
