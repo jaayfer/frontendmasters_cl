@@ -1,19 +1,21 @@
 .header{
     width: 100%;
-    height: 60px;
+    position: absolute;
+    top: 0;
+    left: 0;
     background: linear-gradient(to right, rgba(#000,0.9), rgba(#000,0.6)), $fm_red;
-    font-size: 1.2rem;
-    position: relative;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem;
+    z-index: 2;
 
-    &.container{
-        flex-direction: row;
-        justify-content: space-between;
-        
-    }
     
     &__logo{
-        display: inline-block;
-        flex: 1;
+
+        display: block;       
+        flex : 1;
         color: transparent;
         height: 40px;
         width: auto;
@@ -22,11 +24,11 @@
     }
 
     &__nav{
-           
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        
+        //includes two classes .menu-nav and .menu-btn
+           flex: 1;
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
     }
     
     
@@ -46,8 +48,8 @@
 }
 
 .menu-nav{
+    border: 1px solid white;
     display: flex;
-    justify-content: center;
     align-items: center;
     visibility: hidden;
 
@@ -65,53 +67,54 @@
 }
 
 .menu-btn{
-    width: 28px;
-    height: 24px;
+    width: 2rem;
+    height: 1rem;
     cursor: pointer;
+   
     position: absolute;
-    margin-right: 2rem;
-    z-index: 1;
-
+    right : 0.5rem;
     @include transition-ease-in-out;
 
     &__ham{
         position: absolute;
-        top : 11px;
-        right: 0;
+        z-index: 2;
+        top: 0.5rem;
+        left: 0;
         height: 2px;
-        width: 28px;
+        width: 100%;
         background: #ccc;
         @include transition-ease-in-out;
 
         &::before{
             content: '';
-            background: #ccc;
             position: absolute;
-            top: -11px;
-            right: 0;
-            height: 2px;
-            width: 28px;
+            top: -.5rem;
+            left: 0;            
+            background: #ccc;
+            width: 100%;
+            height: 100%;
         }
         &::after{
             content: '';
-            background: #ccc;
             position: absolute;
-            top: 11px;
-            right: 0;
-            height: 2px;
-            width: 28px;
+            top: .5rem;
+            right: 0;            
+            background: #ccc;
+            width: 100%;
+            height: 100%;
         }
+       
 
         &.open{
             background: transparent;
             transform: rotate(720deg);
             
             &::before{
-                transform: rotate(45deg) translate(12px, 8px);
+                transform: rotate(45deg) translate(0.29rem, 0.25rem);
                 
             }
             &::after{
-                transform: rotate(-45deg) translate(8px, -4px);
+                transform: rotate(-45deg) translate(0.5rem, -0.4rem);
                 
             }
 
