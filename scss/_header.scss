@@ -5,34 +5,28 @@
     left: 0;
     background: linear-gradient(to right, rgba(#000,0.9), rgba(#000,0.6)), $fm_red;
     font-size: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: .5rem;
     z-index: 2;
 
     
     &__logo{
-
-        display: block;       
-        flex : 1;
+        
+        display: block;           
         color: transparent;
-        height: 40px;
-        width: auto;
+        height: 3rem;
+        width: 14rem;
         background: url("../images/logo.svg") center center no-repeat;
        
     }
 
     &__nav{
         //includes two classes .menu-nav and .menu-btn
-           flex: 1;
-           display: flex;
-           justify-content: space-between;
-           align-items: center;
+           position: absolute;
+           top : 0;
+           left: 0;           
+           width: 100%;   
     }
     
-    
-
     &::after{
         content : "";        
         position: absolute;
@@ -41,27 +35,75 @@
         width: 100%;
         height: 20px;
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 20%, 0 0);
-        background-image: linear-gradient(to right, darken(#FF5500, 15%) 0%, darken(#FF5500, 10%) 100%);
-       
+        background-image: linear-gradient(to right, darken(#FF5500, 15%) 0%, darken(#FF5500, 10%) 100%);       
+    }
+
+
+    @include view-lg{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        font-size: 1.05rem;
+        flex-wrap: wrap;
+
+        padding: .5rem 0;
+
+        &__logo{
+            flex:1;
+        }
+        &__nav{
+            position: static;
+            min-width: 60%;
+            flex:1;
+        }
     }
     
 }
 
 .menu-nav{
-    border: 1px solid white;
+    
     display: flex;
     align-items: center;
-    visibility: hidden;
+    justify-content: center;
+    transform: translateY(-100%);
+    overflow: hidden;
+    
+    
 
     &.open{
+        transform: translateY(0);
+        flex-direction: column;
         visibility: visible;
-        background: darken($fm_orange,15%);
+        background: $primary-color;
         position: absolute;
         height: 100vh;
         z-index: 1;
         width: 100%;
         top : 0;
         right: 0;
+        
+        
+    }
+
+    &__item{
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+        @include transition-ease-in-out;
+        transform: translateX(100vw);
+
+        &.open{
+            transform: translateX(0);
+        }
+    }
+
+
+    @include view-lg{
+        transform: translateY(0);
+        &__item{
+            transform: translateX(0);
+            margin : 0;
+            padding: .5rem;
+        }
     }
 
 }
@@ -70,7 +112,7 @@
     width: 2rem;
     height: 1rem;
     cursor: pointer;
-   
+    top:1.5rem;
     position: absolute;
     right : 0.5rem;
     @include transition-ease-in-out;
@@ -102,8 +144,7 @@
             background: #ccc;
             width: 100%;
             height: 100%;
-        }
-       
+        }       
 
         &.open{
             background: transparent;
@@ -123,8 +164,18 @@
         
     }
 
+    @include view-lg{
+        visibility: hidden;
+    }
+
    
 
    
     
+}
+
+@for $i from 1 through 5 {
+  .menu-nav__item:nth-child(#{$i}) {
+    transition-delay: ($i * 0.1s) + 0.15s;
+  }  
 }

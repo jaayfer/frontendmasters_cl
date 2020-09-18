@@ -70,43 +70,23 @@ ul {
   background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.9)), to(rgba(0, 0, 0, 0.6))), #FF0500;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)), #FF0500;
   font-size: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   padding: .5rem;
   z-index: 2;
 }
 
 .header__logo {
   display: block;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
   color: transparent;
-  height: 40px;
-  width: auto;
+  height: 3rem;
+  width: 14rem;
   background: url("../images/logo.svg") center center no-repeat;
 }
 
 .header__nav {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .header::after {
@@ -122,20 +102,59 @@ ul {
   background-image: linear-gradient(to right, #b33c00 0%, #cc4400 100%);
 }
 
+@media screen and (min-width: 760px) {
+  .header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    font-size: 1.05rem;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: .5rem 0;
+  }
+  .header__logo {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  .header__nav {
+    position: static;
+    min-width: 60%;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+}
+
 .menu-nav {
-  border: 1px solid white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  visibility: hidden;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  overflow: hidden;
 }
 
 .menu-nav.open {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   visibility: visible;
-  background: #b32100;
+  background: #333;
   position: absolute;
   height: 100vh;
   z-index: 1;
@@ -144,10 +163,38 @@ ul {
   right: 0;
 }
 
+.menu-nav__item {
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-transform: translateX(100vw);
+          transform: translateX(100vw);
+}
+
+.menu-nav__item.open {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+@media screen and (min-width: 760px) {
+  .menu-nav {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  .menu-nav__item {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    margin: 0;
+    padding: .5rem;
+  }
+}
+
 .menu-btn {
   width: 2rem;
   height: 1rem;
   cursor: pointer;
+  top: 1.5rem;
   position: absolute;
   right: 0.5rem;
   -webkit-transition: all 0.2s ease-in-out;
@@ -200,6 +247,37 @@ ul {
 .menu-btn__ham.open::after {
   -webkit-transform: rotate(-45deg) translate(0.5rem, -0.4rem);
           transform: rotate(-45deg) translate(0.5rem, -0.4rem);
+}
+
+@media screen and (min-width: 760px) {
+  .menu-btn {
+    visibility: hidden;
+  }
+}
+
+.menu-nav__item:nth-child(1) {
+  -webkit-transition-delay: 0.25s;
+          transition-delay: 0.25s;
+}
+
+.menu-nav__item:nth-child(2) {
+  -webkit-transition-delay: 0.35s;
+          transition-delay: 0.35s;
+}
+
+.menu-nav__item:nth-child(3) {
+  -webkit-transition-delay: 0.45s;
+          transition-delay: 0.45s;
+}
+
+.menu-nav__item:nth-child(4) {
+  -webkit-transition-delay: 0.55s;
+          transition-delay: 0.55s;
+}
+
+.menu-nav__item:nth-child(5) {
+  -webkit-transition-delay: 0.65s;
+          transition-delay: 0.65s;
 }
 
 .home {
